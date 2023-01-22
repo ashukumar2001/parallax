@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="hero-container">
+      <h1>Scroll Down</h1>
+    </section>
+    <section class="main">
+      <div class="inner">
+        <h1 class="work">My Work</h1>
+        <div class="cards-container">
+          <div class="card">
+            <div class="image-container">
+              <div class="image"></div>
+            </div>
+            <p class="card__description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero
+              unde, accusamus ut omnis similique ab iste magnam molestiae ea
+              tenetur! Assumenda, reprehenderit consequatur.
+            </p>
+          </div>
+          <div class="card">
+            <div class="image-container">
+              <div class="image"></div>
+            </div>
+            <p class="card__description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero
+              unde, accusamus ut omnis similique ab iste magnam molestiae ea
+              tenetur! Assumenda, reprehenderit consequatur.
+            </p>
+          </div>
+          <div class="card">
+            <div class="image-container">
+              <div class="image"></div>
+            </div>
+            <p class="card__description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero
+              unde, accusamus ut omnis similique ab iste magnam molestiae ea
+              tenetur! Assumenda, reprehenderit consequatur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section></section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+      integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const cards = document.querySelectorAll(".image");
+      let t1 = new gsap.timeline({
+        scrollTrigger: {
+          trigger: ".work",
+          start: "+=200px 90%",
+          end: "bottom 20%",
+          scrub: 1,
+        },
+      });
+      cards.forEach((img) => {
+        let rotation = Math.floor(Math.random() * 80) - 20;
+        let positionX = Math.floor(Math.random() * 500) - 150;
+        let positionY = Math.floor(Math.random() * 500) - 150;
+
+        t1.from(
+          img,
+          {
+            rotation: rotation,
+            x: positionX,
+            y: positionY,
+          },
+          "-=1"
+        );
+        t1.to(
+          img,
+          {
+            "background-size": "100%",
+          },
+          0.5
+        );
+      });
+    </script>
+  </body>
+</html>
