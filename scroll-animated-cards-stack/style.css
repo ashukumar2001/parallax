@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(17, 17, 17);
+}
+header {
+  margin: 0.75rem 0;
+}
+
+.logo {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #fff;
+}
+section {
+  height: 100vh;
+  width: 100%;
+}
+.cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  width: 80%;
+  height: 80vh;
+  position: relative;
+}
+
+.cards .card {
+  --spacing: 50px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 80vh;
+  z-index: 4;
+  overflow: hidden;
+  border-radius: 32px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.cards .card:nth-of-type(2) {
+  top: var(--spacing);
+  z-index: 2;
+}
+.cards .card:nth-of-type(3) {
+  top: calc(var(--spacing) * 2);
+  z-index: 1;
+}
+.cards .card p {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  z-index: 999;
+  font-size: 48px;
+  font-weight: 600;
+  transform: translateY(-50%);
+  width: 400px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.cards .card:nth-child(even) p {
+  left: 10%;
+}
+.cards .card img {
+  width: 100%;
+  border-radius: 32px;
+  height: 80vh;
+}
