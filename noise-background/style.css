@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.noise.noise--src-loaded {
+  opacity: 0.05;
+}
+.noise {
+  display: block;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+  position: fixed;
+  width: 200vw;
+  height: 200vh;
+  left: -50vw;
+  top: -50vh;
+  background: rgba(0, 0, 0, 0) repeat 0 0;
+  will-change: transform;
+  opacity: 1;
+  animation: noise-animation 0.2s steps(2) infinite;
+  -webkit-animation: noise-animation 0.2s steps(2) infinite;
+}
+
+@keyframes noise-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5vw, -5vh);
+  }
+  20% {
+    transform: translate(-10vw, 5vh);
+  }
+  30% {
+    transform: translate(5vw, -10vh);
+  }
+  40% {
+    transform: translate(-5vw, 15vh);
+  }
+  50% {
+    transform: translate(-10vw, 5vh);
+  }
+  60% {
+    transform: translate(15vw, 0vh);
+  }
+  70% {
+    transform: translate(0vw, 10vh);
+  }
+  80% {
+    transform: translate(-15vw, 0vh);
+  }
+  90% {
+    transform: translate(10vw, 5vh);
+  }
+  100% {
+    transform: translate(5vw, 0vh);
+  }
+}
